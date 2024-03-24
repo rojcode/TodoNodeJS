@@ -1,0 +1,58 @@
+extends ../layouts/main.pug
+
+block titleContent
+    title تنظیمات کاربر
+
+
+block cssContent
+    link(rel="stylesheet" href="/css/dashboard/settings.css")
+
+
+
+block bodyContent
+    - const removeUploadsPrefix = (inputString) => {return inputString.replace("uploads/", "");};
+    
+    .container
+        .profile-picture
+            - if(status=='update')
+                img(src=removeUploadsPrefix(user.profileImage) alt='Profile Picture')
+            - else
+                img(src='https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-538.jpg' alt='Profile Picture')
+        .profile-form
+            h2 تنطیمات پروفایل
+            - if(status=='create')
+                form(action="/dashboard/users/update" method="post" enctype="multipart/form-data")
+                    label(for='phone') تلفن:
+                    br
+                    input#phone(type='text' name='phone' placeholder='شمارە تلفن خود را وارد نمایید')
+                    br
+                    label(for='telegram') تلگرام آیدی:
+                    br
+                    input#telegram(type='text' name='telegram' placeholder='آیدی تلگرام خود را وارد نمایید')
+                    br
+                    hr
+                    label(for='file') تغییر تصویر زمینه
+                    input#avatar(type='file' name='avatar' accept='image/*')
+                    br
+                    br
+                    hr
+                    input(type='submit' value='تغییر')
+            - else
+                form(action="/dashboard/users/change" method="post" enctype="multipart/form-data")
+                    label(for='phone') تلفن:
+                    br
+                    input#phone(type='text' name='phone' placeholder='شمارە تلفن خود را وارد نمایید' value=`${user.phone}`)
+                    br
+                    label(for='telegram') تلگرام آیدی:
+                    br
+                    input#telegram(type='text' name='telegram' placeholder='آیدی تلگرام خود را وارد نمایید' value=`${user.telegramId}`)
+                    br
+                    hr
+                    label(for='file') تغییر تصویر زمینه
+                    input#avatar(type='file' name='avatar' accept='image/*' value=`${user.profileImage}`)
+                    br
+                    br
+                    hr
+                    input(type='submit' value='تغییر')
+    a.fixed-button(href="/") خانه
+

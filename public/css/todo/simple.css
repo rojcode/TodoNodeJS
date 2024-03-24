@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+
+
+body {
+    font-family: mi-regular, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #333333;
+    font-family: mi-black, sans-serif;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: mi-regular, sans-serif;
+}
+
+button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: #4682b4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-black, sans-serif;
+}
+
+button:hover {
+    background-color: #357ebd;
+}
+
+.todo-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.todo-item h4 {
+    margin: 0;
+    color: #333333;
+}
+
+.todo-item p {
+    margin-top: 5px;
+    color: #666666;
+}
+
+
+.todo-item button:hover {
+    background-color: #ff9933;
+    font-family: mi-black, sans-serif;
+}
+
+
+button.delete-button {
+    margin-bottom: 10px;
+    background-color: red;
+}
+
+button.done-button {
+    margin-bottom: 10px;
+    background-color: gray;
+}
+
+button.update-button{
+    background-color: #357ebd;
+}
+
+a:hover {
+    text-decoration: none;
+    color:white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

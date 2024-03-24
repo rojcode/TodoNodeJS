@@ -1,0 +1,33 @@
+extends layouts/main 
+
+block titleContent
+    title خانه
+
+
+block cssContent
+    link(
+        href="css/main.css" 
+        rel="stylesheet"
+        )
+
+block bodyContent
+    .container
+        .user-info
+            p.welcome خوش آمدید #{firstName} عزیز!
+            .dropdown
+                button.dropbtn(onclick="myFunction()") بیشتر... 
+                #myDropdown.dropdown-content
+                    a(href="/dashboard") تنظیمات
+                    a(href="/logout") خروج
+        .content
+            h2 میز کار شما آماده است 
+            .container
+                .category
+                    h3 ساخت TODO بر اساس دسته بندی
+                    button(onclick="window.location.href = '/category';") ساختن
+            .container
+                .category
+                    h3 ساخت TODO سادە
+                    button(onclick="window.location.href = '/todo/simple';") ساختن 
+
+    script(src="/js/menu.js")

@@ -1,0 +1,32 @@
+block titleContent
+    title دستبه بندی 
+
+
+
+block cssContent
+    link(rel="stylesheet" href="/css/todo/category.css")
+
+block bodyContent
+    .container
+        .add-todo
+            form(action="/category/add" method="post")
+                input(type="text" name='title' placeholder="اضافە کردن تایتل")
+                br
+                br
+                input(type="text" name='description' placeholder="اضافە کردن توضیحات")
+                br
+                br
+                button اضافە کردن دستەبندی جدید
+        .todo-cards
+            each cate in categories
+                .todo-card
+                    h4=cate.title
+                    p=cate.description
+                    button.deleteButton
+                        a(href=`/category/delete/${cate.id}`) حذف
+                    button.startButton
+                        a(href=`/category/go/${cate.id}/show`) ادامە
+                    button.updateButton
+                        a(href=`/category/update/${cate.id}`) تغییر
+                    span=new Date(cate.time).toLocaleDateString("fa-IR")
+    a.fixed-button(href="/") خانه    

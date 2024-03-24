@@ -1,0 +1,46 @@
+extends  layouts/account
+
+
+
+
+block titleContent 
+    title ثبت نام
+
+
+
+block content 
+    .container
+        form(action="/signup/create" method="post")
+            h2 ثبت نام 
+            p #{error}
+            input(
+                placeholder="نام کاربری" 
+                type="text"
+                name="username"
+                )
+            input(
+                placeholder="نام " 
+                type="text"
+                name="firstName"
+                )
+            input(
+                placeholder="نام خانوداگی " 
+                type="text"
+                name="lastName"
+
+                )
+            input(
+                placeholder="ایمیل" 
+                type="email"
+                name="email"
+                )
+            input(
+                placeholder="رمز عبور" 
+                type="password"
+                name="password"
+                )
+            p
+            | آیا حساب کاربری دارید ؟
+            a(href="/login") ورود
+            button(type="submit") ثبت نام 
+        a.fixed-button(href="/") خانه

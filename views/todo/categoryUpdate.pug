@@ -1,0 +1,21 @@
+block titleContent
+    title آپدیت دستبە بندی
+
+
+
+block cssContent
+    link(rel="stylesheet" href="/css/todo/category.css")
+
+block bodyContent
+    .container
+        .add-todo
+            form(action="/category/update/done" method="post")
+                input(type="text" name='title' placeholder="اضافە کردن تایتل" value=`${title}`)
+                br
+                br
+                input(type="text" name='description' placeholder="اضافە کردن توضیحات" value=`${description}`)
+                br
+                br
+                button آپدیت دستبە بندی
+    a.fixed-button(href="/") خانه    
+

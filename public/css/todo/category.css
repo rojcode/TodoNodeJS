@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+
+body {
+    font-family: mi-regular, sans-serif;
+    background-color: #add8e6;
+    /* آبی کمرنگ */
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    /* سفید */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-todo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-todo input {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+    font-family: mi-regular, sans-serif;
+}
+
+.add-todo button {
+    padding: 10px 20px;
+    background-color: #4682b4;
+    /* آبی */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-regular, sans-serif;
+}
+
+.add-todo button:hover {
+    background-color: #357ebd;
+    /* آبی تیره */
+}
+
+.todo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.todo-card {
+    background-color: #ffffff;
+    /* سفید */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.todo-card h4 {
+    margin-top: 0;
+}
+
+
+.startButton {
+    background-color: #22a74c;
+    /* نارنجی */
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-regular, sans-serif;
+}
+
+
+.updateButton {
+    background-color: #4f32b1;
+    /* نارنجی */
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-regular, sans-serif;
+}
+.deleteButton {
+    background-color:red;
+    /* نارنجی */
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-regular, sans-serif;
+}
+
+.todo-card button:hover {
+    background-color: #ff7f50;
+    /* نارنجی روشن */
+}
+
+
+a:hover {
+    text-decoration: none;
+    color:white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+

@@ -1,0 +1,72 @@
+extends ../layouts/main.pug
+
+block titleContent
+    title Todo لیست سادە
+
+
+
+block cssContent 
+    link(
+        href="/css/todo/simple.css" 
+        rel="stylesheet"
+        )
+
+
+block bodyContent
+    .container
+        h3 اضافە کردن Todo
+        hr
+        - if(success==true)
+            h3(style="color: green;") #{message}
+        - else 
+            h3(style="color: red;") #{message}
+        form(action="/todo/simple/add" method="post")
+            input(
+            placeholder="عنوان" 
+            type="text"
+            name="title"
+            )
+            input(
+            placeholder="توضیحات" 
+            type="text"
+            name="description"
+            )
+            input(
+            placeholder="تگ ها" 
+            type="text"
+            name="tags"
+            )
+            button(type="submit") اضافە کردن
+        .todo-list
+            if todos && todos.length > 0
+                each todo in todos
+                    .todo-item
+                        if todo.completed == true
+                            h2= todo.title + '-(انجام شدە)'
+                            p= todo.description
+                            - var tags = todo.tags.split('،');
+                                each tag in tags
+                                    a(href=`/search/tags/${tag}` class="tag" style='color: blue;')= '#'+tag.trim() + '  ' 
+                            button.delete-button
+                                a(href=`/todo/simple/delete/${todo.id}/${todo.title}`) حذف
+                        else 
+                            h2= todo.title + '-(انجام نشده)'
+                            p= todo.description
+                            - var tags = todo.tags.split('،');
+                                each tag in tags
+                                    a(href=`/search/tags/${tag}` class="tag" style='color: blue;')= '#'+tag.trim() + '  ' 
+                            button.delete-button
+                                a(href=`/todo/simple/delete/${todo.id}/${todo.title}`) حذف
+                            button(onclick=`window.location.href = '/todo/simple/changeStatus/${todo.id}';`).done-button انجام شد
+                            button(onclick=`window.location.href = '/todo/simple/update/${todo.id}/';`).update-button تغییر 
+
+            else 
+                p چیزی برای نمایش وجود ندارد - یا میتوانید صفحە رو رفرش کنید برای ارزیابی مجدد
+                
+    a.fixed-button(href="/") خانه    
+
+
+
+
+
+

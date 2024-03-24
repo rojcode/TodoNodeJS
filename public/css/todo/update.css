@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+body {
+    font-family: mi-regular, sans-serif;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#message.success {
+    background-color: #4caf50;
+}
+
+#message.error {
+    background-color: #ff4444;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4682b4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #357ebd;
+}

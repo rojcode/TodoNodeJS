@@ -1,0 +1,69 @@
+extends ../layouts/main.pug
+
+block titleContent
+    title Todo لیست سادە
+
+
+
+block cssContent 
+    link(
+        href="/css/todo/simple.css" 
+        rel="stylesheet"
+        )
+
+
+block bodyContent
+    .container
+        h3 اضافە کردن Todo بە #{category.title}
+        hr
+        form(action="/category/items/save" method="post")
+            input(
+            placeholder="عنوان" 
+            type="text"
+            name="title"
+            )
+            input(
+            placeholder="توضیحات" 
+            type="text"
+            name="description"
+            )
+            input(
+            placeholder="تگ ها" 
+            type="text"
+            name="tags"
+            )
+            button(type="submit") اضافە کردن
+        .todo-list
+            if todos && todos.length > 0
+                each todo in todos
+                    .todo-item
+                        if todo.completed == true
+                            h2= todo.title + '-(انجام شدە)'
+                            p= todo.description
+                            - var tags = todo.tags.split('،');
+                                each tag in tags
+                                    a(href=`/search/tags/${tag}` class="tag" style='color: blue;')= '#'+tag.trim() + '  ' 
+                            button.delete-button
+                                a(href=`/category/items/delete/${todo.id}`) حذف
+                        else 
+                            h2= todo.title + '-(انجام نشده)'
+                            p= todo.description
+                            - var tags = todo.tags.split('،');
+                                each tag in tags
+                                    a(href=`/search/tags/${tag}` class="tag" style='color: blue;')= '#'+tag.trim() + '  ' 
+                            button.delete-button
+                                a(href=`/category/items/delete/${todo.id}`) حذف
+                            button(onclick=`window.location.href = '/category/items/change/status/${todo.id}';`).done-button انجام شد
+                            button(onclick=`window.location.href = '/category/items/update/go/${todo.id}';`).update-button تغییر 
+
+            else 
+                p چیزی برای نمایش وجود ندارد - یا میتوانید صفحە رو رفرش کنید برای ارزیابی مجدد
+    
+    a.fixed-button(href="/") خانه    
+
+
+
+
+
+
+

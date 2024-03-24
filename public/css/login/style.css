@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+
+
+body {
+    font-family: mi-regular, sans-serif;
+    background-color: #f0f8ff; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    direction: rtl;
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: mi-regular, sans-serif;
+}
+
+button {
+    background-color: #4682b4; 
+    color: #ffffff;
+    cursor: pointer;
+    font-family: mi-black,sans-serif;
+}
+
+button:hover {
+    background-color: #357ebd; 
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-family: mi-black,sans-serif;
+}
+
+p{
+    font-family: mi-black,sans-serif;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff7f00; /* رنگ نارنجی */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.fixed-button:hover {
+    background-color: #ff9933; /* رنگ نارنجی روشن‌تر */
+}

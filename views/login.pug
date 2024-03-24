@@ -1,0 +1,33 @@
+extends  layouts/account
+
+
+
+
+
+block titleContent 
+    title ورود
+
+
+
+block content 
+    .container
+        form(action="/login/check" method="post")
+            h2 ورود
+            h2 #{message}
+            h2 #{error}
+            input(
+                placeholder="نام کاربری" 
+                type="text"
+                name="username"
+                )
+            input(
+                placeholder="رمز عبور" 
+                type="password"
+                name="password"
+                )
+            button(type="submit") ورود
+            p
+                | آیا حساب کاربری ندارید؟
+                a(href="/signup") ثبت نام
+            a.fixed-button(href="/") خانه
+

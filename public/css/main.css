@@ -1,0 +1,119 @@
+
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+body {
+    font-family: mi-regular, sans-serif;
+    background-color: #add8e6; /* آبی کمرنگ */
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* سفید */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome {
+    font-size: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #4682b4; /* آبی */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.content {
+    text-align: center;
+}
+
+.category {
+    font-family: mi-black, sans-serif;
+    margin: 20px;
+}
+
+.category h3 {
+    color: #4682b4; /* آبی */
+    
+}
+
+button {
+    background-color: #4682b4; /* آبی */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: mi-regular, sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357ebd; /* آبی تیره */
+}
+
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ff7f00; /* رنگ نارنجی */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.fixed-button:hover {
+    background-color: #ff9933; /* رنگ نارنجی روشن‌تر */
+}
+

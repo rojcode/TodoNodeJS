@@ -1,0 +1,31 @@
+extends ../layouts/main.pug
+
+
+block titleContent
+    title آپدیت کردن
+
+
+block cssContent
+    link(rel="stylesheet" href="/css/todo/update.css")
+
+
+block bodyContent 
+    body
+        .container
+            h1 ویرایش Todo - #{title}
+            hr
+            #message
+            form(action="/category/items/update/done" method="post")
+                input(type="hidden" name="id" value=`${id}`)
+                .form-group
+                label(for="title") عنوان:
+                input#title(type="text" name="title" placeholder="عنوان", value=`${title}` required)
+                .form-group
+                label(for="description") توضیحات:
+                textarea#description(name="description" placeholder="توضیحات" rows="5")= description
+                .form-group
+                label(for="tags") تگ ها:
+                input#tags(type="text" name="tags" placeholder="تگ ها" value=`${tags}`)
+                button(type="submit") تغییر
+
+    a.fixed-button(href="/") خانه    

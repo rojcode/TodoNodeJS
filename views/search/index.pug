@@ -1,0 +1,63 @@
+extends ../layouts/main.pug
+
+block titleContent
+    title Todo لیست سادە
+
+
+
+block cssContent 
+    link(
+        href="/css/todo/simple.css" 
+        rel="stylesheet"
+        )
+
+
+block bodyContent
+    .container
+        .todo-list
+            h3  نتایج در دستەبندی
+            if category && category.length > 0
+                    each todo in category
+                        .todo-item
+                            if todo.completed == true
+                                h2= todo.title + '-(انجام شدە)'
+                                p= todo.description
+                                p= todo.tags
+                                button.delete-button
+                                    a(href=`/category/items/delete/${todo.id}`) حذف
+                            else 
+                                h2= todo.title + '-(انجام نشده)'
+                                p= todo.description
+                                p= todo.tags
+                                button.delete-button
+                                    a(href=`/category/items/delete/${todo.id}`) حذف
+                                button(onclick=`window.location.href = '/category/items/change/status/${todo.id}';`).done-button انجام شد
+                                button(onclick=`window.location.href = '/category/items/update/go/${todo.id}';`).update-button تغییر 
+
+                
+
+
+        .todo-list
+            h3 نتایج در بدون دستەبندی
+            if simples && simples.length > 0
+                each todo in simples
+                    .todo-item
+                        if todo.completed == true
+                            h2= todo.title + '-(انجام شدە)'
+                            p= todo.description
+                            p= todo.tags
+                            button.delete-button
+                                a(href=`/todo/simple/delete/${todo.id}/${todo.title}`) حذف
+                        else 
+                            h2= todo.title + '-(انجام نشده)'
+                            p= todo.description
+                            - var tags = todo.tags.split('،');
+                                each tag in tags
+                                    a(href="" class="tag" style='color: blue;')= '#'+tag.trim() + '  ' 
+                            button.delete-button
+                                a(href=`/todo/simple/delete/${todo.id}/${todo.title}`) حذف
+                            button(onclick=`window.location.href = '/todo/simple/changeStatus/${todo.id}';`).done-button انجام شد
+                            button(onclick=`window.location.href = '/todo/simple/update/${todo.id}/';`).update-button تغییر 
+
+            else 
+                p چیزی برای نمایش وجود ندارد - یا میتوانید صفحە رو رفرش کنید برای ارزیابی مجدد

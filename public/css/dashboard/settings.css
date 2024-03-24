@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'mi-regular';
+    src: url('../../fonts/Mikhak-DS1-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'mi-black';
+    src: url('../../fonts/Mikhak-DS2-Black.woff2') format('woff2');
+}
+
+
+body {
+    font-family: mi-regular, sans-serif;
+    background-color: #add8e6; /* آبی کمرنگ */
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff; /* سفید */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .profile-form {
+    text-align: center;
+  }
+
+  .profile-form h2 {
+    margin-bottom: 20px;
+  }
+
+  .profile-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .profile-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: mi-regular, sans-serif;
+  }
+
+  .profile-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4682b4; /* آبی */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: mi-regular, sans-serif;
+    
+  }
+
+  .profile-form input[type="submit"]:hover {
+    background-color: #357ebd; /* آبی تیره */
+  }
+
+
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff7f00; /* رنگ نارنجی */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.fixed-button:hover {
+  background-color: #ff9933; /* رنگ نارنجی روشن‌تر */
+}
