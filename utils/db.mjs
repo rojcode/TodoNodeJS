@@ -4,7 +4,7 @@ import { Sequelize } from 'sequelize';
 // Define database connection details
 const database = 'rojcodeTodo';
 const username = 'postgres';
-const password = 'Ezkurdim_80';
+const password = 'password';
 const host = 'localhost';
 const dialect = 'postgres';
 
